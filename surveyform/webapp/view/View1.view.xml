@@ -1,0 +1,56 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+controllerName="com.ui5.training.surveyform.controller.View1">
+ 
+  <layout:SimpleForm
+    id="SimpleFormDisplay"
+    layout="ResponsiveGridLayout"
+    labelSpanL="3"
+    labelSpanM="3"
+    emptySpanL="1"
+    emptySpanM="1"
+    columnsL="2"
+    columnsM="2"
+    editable="true">
+ 
+    <!-- Name -->
+    <Label text="Name" />
+    <Input id="inputName" width="100%" />
+ 
+    <!-- Street / No -->
+    <Label text="Street/No." />
+    <FlexBox direction="Row" renderType="Bare" width="100%" justifyContent="Start">
+      <Input id="inputStreet" width="70%" />
+      <Input id="inputNo" width="30%" class="sapUiTinyMarginBegin" />
+    </FlexBox>
+ 
+    <!-- ZIP / City -->
+    <Label text="ZIP Code/City" />
+    <FlexBox direction="Row" renderType="Bare" width="100%" justifyContent="Start">
+      <Input id="inputZip" width="30%" />
+      <Input id="inputCity" width="70%" class="sapUiTinyMarginBegin" />
+    </FlexBox>
+ 
+    <!-- Country -->
+    <Label text="Country" />
+    <ComboBox id="selectedCountry" width="100%">
+      <items>
+        <core:Item key="EN" text="England" />
+        <core:Item key="DE" text="Germany" />
+        <core:Item key="US" text="USA" />
+        <core:Item key="PH" text="Philippines" />
+      </items>
+    </ComboBox>
+ 
+    <!-- Button row -->
+    <Label text="" />
+    <HBox justifyContent="End">
+      <Button text="Save" id="buttonSave" type="Accept" class="sapUiTinyMarginEnd" />
+      <Button text="Clear" id="buttonClear" type="Reject" press="onClear" />
+    </HBox>
+ 
+  </layout:SimpleForm>
+</mvc:View>
